@@ -16,7 +16,7 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/kalaimedicalcenter/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-2 rounded-full bg-kalai-sage/10 hover:bg-kalai-sage hover:text-white transition-all"
@@ -24,7 +24,7 @@ export default function Footer() {
                 <Instagram size={20} />
               </a>
               <a 
-                href="https://facebook.com" 
+                href="https://www.facebook.com/share/19wMuzqoM7/?mibextid=wwXIfr" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-2 rounded-full bg-kalai-sage/10 hover:bg-kalai-sage hover:text-white transition-all"
@@ -71,11 +71,23 @@ export default function Footer() {
               </li>
               <li className="flex items-center text-kalai-brown/70">
                 <Mail size={16} className="mr-2" />
-                <span>info@kalai.cr</span>
+                <a 
+                  href="mailto:dra.ilenjimenez@silkskincr.com"
+                  className="hover:text-kalai-sage transition-colors"
+                >
+                  dra.ilenjimenez@silkskincr.com
+                </a>
               </li>
               <li className="flex items-start text-kalai-brown/70">
                 <MapPin size={16} className="mr-2 mt-1" />
-                <span>Costa Rica</span>
+                <a 
+                  href="https://waze.com/ul/hd1u0w1dxu" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-kalai-sage transition-colors"
+                >
+                  Sabana Norte, calle 64<br />Urbanización Castro<br />San José, Costa Rica
+                </a>
               </li>
             </ul>
           </div>

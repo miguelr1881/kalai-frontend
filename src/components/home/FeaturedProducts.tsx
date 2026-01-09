@@ -4,27 +4,27 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
-import ProductCard from '@/components/products/ProductCard'
-import { getProducts } from '@/lib/api'
-import type { Product } from '@/types'
+import TreatmentCard from '@/components/treatments/TreatmentCard'
+import { getTreatments } from '@/lib/api'
+import type { Treatment } from '@/types'
 
 export default function FeaturedProducts() {
-  const [products, setProducts] = useState<Product[]>([])
+  const [treatments, setTreatments] = useState<Treatment[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchTreatments = async () => {
       try {
-        const data = await getProducts()
-        setProducts(data.slice(0, 3)) // Show only first 3
+        const data = await getTreatments()
+        setTreatments(data.slice(0, 3)) // Show only first 3
       } catch (error) {
-        console.error('Error fetching products:', error)
+        console.error('Error fetching treatments:', error)
       } finally {
         setLoading(false)
       }
     }
 
-    fetchProducts()
+    fetchTreatments()
   }, [])
 
   return (
@@ -60,15 +60,15 @@ export default function FeaturedProducts() {
           </div>
         ) : (
           <div className="grid md:grid-cols-3 gap-8">
-            {products.map((product, index) => (
+            {treatments.map((treatment, index) => (
               <motion.div
-                key={product.id}
+                key={treatment.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <ProductCard product={product} />
+                <TreatmentCard treatment={treatment} />
               </motion.div>
             ))}
           </div>
@@ -82,8 +82,8 @@ export default function FeaturedProducts() {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <Link href="/productos" className="btn-primary group inline-flex items-center">
-            Ver Todos los Productos
+          <Link href="/tratamientos" className="btn-primary group inline-flex items-center">
+            Ver Todos los Tratamientos
             <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
           </Link>
         </motion.div>

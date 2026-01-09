@@ -23,6 +23,9 @@ export default function Navbar() {
             <Link href="/" className="text-kalai-brown hover:text-kalai-sage transition-colors">
               Inicio
             </Link>
+            <Link href="/tratamientos" className="text-kalai-brown hover:text-kalai-sage transition-colors">
+              Tratamientos
+            </Link>
             <Link href="/productos" className="text-kalai-brown hover:text-kalai-sage transition-colors">
               Productos
             </Link>
@@ -33,7 +36,7 @@ export default function Navbar() {
               Contacto
             </Link>
             <Link href="/admin" className="btn-primary text-sm">
-              Admin
+              Iniciar Sesión
             </Link>
           </div>
 
@@ -57,6 +60,13 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
             >
               Inicio
+            </Link>
+            <Link 
+              href="/tratamientos" 
+              className="block text-kalai-brown hover:text-kalai-sage transition-colors py-2"
+              onClick={() => setIsOpen(false)}
+            >
+              Tratamientos
             </Link>
             <Link 
               href="/productos" 
@@ -84,7 +94,7 @@ export default function Navbar() {
               className="block text-kalai-sage hover:text-kalai-sage-dark transition-colors py-2 font-medium"
               onClick={() => setIsOpen(false)}
             >
-              Admin
+              Iniciar Sesión
             </Link>
           </div>
         </div>
